@@ -1,0 +1,15 @@
+<Context path="/openidserver" docBase="../../crowd-openidserver-webapp">
+
+    <Resource name="jdbc/CrowdIDDS" auth="Container" type="javax.sql.DataSource"
+              username="<%= @iddbuser %>"
+              password="<%= @iddbpassword %>"
+              driverClassName="<%= @iddbdriver %>"
+              url="<%= @iddburl %>?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8"
+              <% if @iddb == 'mysql' %>
+              validationQuery="Select 1"
+              <% end %>
+            />
+
+    <Manager className="org.apache.catalina.session.PersistentManager" saveOnRestart="false"/>
+
+</Context>
