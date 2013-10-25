@@ -32,5 +32,4 @@ class crowd::config {
     content => template('crowd/jdbc.properties.erb'),
     mode    => '0644'
   }
-
 }

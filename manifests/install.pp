@@ -38,9 +38,13 @@ class crowd::install {
     subscribe   => User[$crowd::user]
   } ->
 
-  file { '/etc/init.d/crowd':
-    content => template('crowd/etc/rc.d/init.d/crowd.erb'),
-    mode    => '0755',
+  file { '/etc/init/crowd.conf':
+    content => template('crowd/etc/init/crowd.conf.erb'),
+    mode    => '0644',
+  } ->
+
+  file { '/var/log/crowd':
+    ensure => 'directory',
   }
 
 }

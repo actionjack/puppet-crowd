@@ -3,22 +3,14 @@
 #
 # This module is used to install Crowd.
 #
-# This module requires mkrakowitzer-deploy
+# This module requires mkrakowitzer-deploy and maestrodev-wget
 #
 # === Parameters
 #
 # === Examples
 #
 #  class { 'crowd':
-#    version     => '2.7.0',
-#    installdir  => '/opt/atlassian/atlassian-crowd',
-#    homedir     => '/opt/atlassian/atlassian-crowd/crowd-home',
-#    user        => 'crowd',
-#    group       => 'crowd',
-#    dbpassword  => 'mysecret',
-#    dbserver    => 'devecodb1',
-#    javahome    => '/opt/development-tools/java/jdk1.7.0_21/',
-#    downloadURL  => 'http://myurl/pub/software/atlassian/',
+#
 #  }
 #
 # === Authors
@@ -79,6 +71,6 @@ class crowd (
 
   include crowd::install
   include crowd::config
- # include crowd::service
+  include crowd::service
 
 }
