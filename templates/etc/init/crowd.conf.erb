@@ -1,0 +1,17 @@
+# crowd
+description "Atlassian Crowd - Single Sign-On (SSO) and Identity Management"
+start on startup
+stop on shutdown
+
+respawn
+kill timeout 30
+
+setuid <%= @user %>
+setgid <%= @group %>
+
+env BASEDIR=<%= @webappdir %>/apache-tomcat
+
+script
+    LOGFILE=/var/log/crowd/crowd.`date +%Y-%m-%d`.log
+    exec $BASEDIR/bin/catalina.sh run >> $LOGFILE 2>&1
+end script

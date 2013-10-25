@@ -5,6 +5,8 @@
 #
 # This module requires mkrakowitzer-deploy and maestrodev-wget
 #
+# Format modeled on from @brycejohnson & @mkrakowitzer 's / puppet-jira module
+#
 # === Parameters
 #
 # === Examples
@@ -17,6 +19,8 @@
 #
 # Martin Jackson
 #
+# Todo
+# - Complete unit test suite
 #
 class crowd (
 
