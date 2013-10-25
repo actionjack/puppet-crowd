@@ -13,6 +13,7 @@ describe 'crowd', :type => :class do
         it { should contain_user('crowd')}
         it { should contain_file('/etc/init/crowd.conf').with_content(/setuid\scrowd/)}
         it { should contain_file('/etc/init/crowd.conf').with_content(/setgid\scrowd/)}
+        it { should contain_file('/etc/init/crowd.conf').with_content(/env\sBASEDIR=.opt.crowd.atlassian-crowd-2.7.0-standalone.apache-tomcat/)}
 
       end
     end
