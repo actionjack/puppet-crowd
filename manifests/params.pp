@@ -1,3 +1,5 @@
+# Class crowd::params
+#
 class crowd::params {
   $version        = '2.7.0'
   $user           = 'crowd'
@@ -27,7 +29,7 @@ case $db {
       $jdbcversion       = undef
     }
     default: {
-      warning("Database type $db is not supported")
+      warning("Database type ${db} is not supported")
     }
   }
 
@@ -51,7 +53,7 @@ case $db {
       $idjdbcversion       = undef
     }
     default: {
-      warning("Database type $iddb is not supported")
+      warning("Database type ${iddb} is not supported")
     }
   }
 

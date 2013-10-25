@@ -1,4 +1,5 @@
-
+# Class crowd::install
+#
 class crowd::install {
 
   require crowd

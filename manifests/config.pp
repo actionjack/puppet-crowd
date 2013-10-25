@@ -1,4 +1,5 @@
-
+# Class crowd::config
+#
 class crowd::config {
 
   require crowd

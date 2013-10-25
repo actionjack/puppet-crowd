@@ -60,7 +60,6 @@ class crowd (
   $poolsize          = '15',
 
   # JVM Settings
- # $javahome,
   $jvm_xmx      = '1024m',
   $jvm_optional = '-XX:-HeapDumpOnOutOfMemoryError',
 
