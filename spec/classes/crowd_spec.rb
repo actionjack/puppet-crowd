@@ -27,13 +27,13 @@ describe 'crowd', :type => :class do
         it 'should start the crowd service using the crowd group' do
           should contain_file('/etc/init/crowd.conf').with_content(/setgid\scrowd/)
         end
-        it 'should have the connect base directory configure in the upstart script' do
+        it 'should have the correct base directory configured in the upstart script' do
           should contain_file('/etc/init/crowd.conf').with_content(/env\sBASEDIR=.opt.crowd.atlassian-crowd-2.7.0-standalone.apache-tomcat/)
         end
-        it 'should create directory for log output' do
+        it 'should create a directory for log output' do
           should contain_file('/var/log/crowd').with( :ensure => 'directory' )
         end
-        it 'should create /opt/crowd application directory tree' do
+        it 'should create the crowd application directory tree' do
           should contain_file('/opt/crowd').with(:ensure => 'directory')
         end
         it 'should download and install the Atlassian Crowd application' do
@@ -49,7 +49,7 @@ describe 'crowd', :type => :class do
               :command => '/bin/chown -R crowd:crowd /opt/crowd/atlassian-crowd-2.7.0-standalone'
           )
         end
-        it 'should download the MySQL java connector for Crowd' do
+        it 'should download and install the MySQL java connector for Crowd' do
           should contain_wget__fetch('mysql java connector').with(
               :source      => 'http://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.26/mysql-connector-java-5.1.26.jar',
               :destination => '/opt/crowd/atlassian-crowd-2.7.0-standalone/apache-tomcat/lib/mysql-connector-java-5.1.26.jar'
@@ -67,7 +67,7 @@ describe 'crowd', :type => :class do
         it 'should have a password configured to access the Crowd ID Database' do
           should contain_file('/opt/crowd/atlassian-crowd-2.7.0-standalone/apache-tomcat/conf/Catalina/localhost/openidserver.xml').with_content(/password="mypassword"/)
         end
-        it 'should define a mysql jdbc as the primary driver class'do
+        it 'should define a mysql jdbc driver as the primary driver class'do
           should contain_file('/opt/crowd/atlassian-crowd-2.7.0-standalone/apache-tomcat/conf/Catalina/localhost/openidserver.xml').with_content(/driverClassName="com.mysql.jdbc.Driver"/)
         end
         it 'should have a valid jdbc connection string to a locally hosted crowd ID mysql database' do
@@ -79,7 +79,7 @@ describe 'crowd', :type => :class do
         it 'should have a openidserver.xml file that is world readable' do
           should contain_file('/opt/crowd/atlassian-crowd-2.7.0-standalone/apache-tomcat/conf/Catalina/localhost/openidserver.xml').with( :mode => '0644')
         end
-        it 'should have the hibernate dialected configured for MySQL Innodb' do
+        it 'should have the hibernate dialect configured for MySQL Innodb' do
           should contain_file('/opt/crowd/atlassian-crowd-2.7.0-standalone/crowd-openidserver-webapp/WEB-INF/classes/jdbc.properties').with_content(/hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect/)
         end
         it 'should have a jdbc.properties file what it world readable' do
