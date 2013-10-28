@@ -14,6 +14,7 @@ class crowd::params {
   $dbserver       = 'localhost'
   $dbname         = 'crowd'
   $mavenrepopath  = 'http://repo1.maven.org/maven2/mysql/mysql-connector-java'
+  $downloadURL  = 'http://www.atlassian.com/software/crowd/downloads/binary/'
 
 case $db {
     'mysql': {

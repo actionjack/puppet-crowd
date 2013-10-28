@@ -20,7 +20,6 @@
 # Martin Jackson
 #
 # Todo
-# - Complete unit test suite
 #
 class crowd (
 
@@ -46,25 +45,18 @@ class crowd (
   $jdbcversion       = $crowd::params::jdbcversion,
 
   # CrowdID Database Settings
-  $iddb                = $crowd::params::iddb,
-  $iddbuser            = $crowd::params::iddbuser,
-  $iddbpassword        = $crowd::params::iddbpassword,
-  $iddbserver          = $crowd::params::iddbserver,
-  $iddbname            = $crowd::params::iddbname,
-  $iddbport            = $crowd::params::iddbport,
-  $iddbdriver          = $crowd::params::iddbdriver,
-  $iddbtype            = $crowd::params::iddbtype,
-  $idjdbcversion       = $crowd::params::idjdbcversion,
-
-
-  $poolsize          = '15',
-
-  # JVM Settings
-  $jvm_xmx      = '1024m',
-  $jvm_optional = '-XX:-HeapDumpOnOutOfMemoryError',
+  $iddb              = $crowd::params::iddb,
+  $iddbuser          = $crowd::params::iddbuser,
+  $iddbpassword      = $crowd::params::iddbpassword,
+  $iddbserver        = $crowd::params::iddbserver,
+  $iddbname          = $crowd::params::iddbname,
+  $iddbport          = $crowd::params::iddbport,
+  $iddbdriver        = $crowd::params::iddbdriver,
+  $iddbtype          = $crowd::params::iddbtype,
+  $idjdbcversion     = $crowd::params::idjdbcversion,
 
   # Misc Settings
-  $downloadURL  = 'http://www.atlassian.com/software/crowd/downloads/binary/',
+  $downloadURL       = $crowd::params::downloadURL,
 
 ) inherits crowd::params {
 
