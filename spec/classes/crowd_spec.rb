@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'crowd', :type => :class do
-  context "As a Web Operations Engineer" do
+  context 'As a Web Operations Engineer' do
     context 'When I install the crowd base class on Ubuntu' do
       let :facts do {
           :osfamily        => 'Debian',
