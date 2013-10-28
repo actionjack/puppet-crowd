@@ -21,6 +21,7 @@ Current dependencies are:
 
 ## Usage
 
+At the moment this module only works with Ubuntu and Mysql.
 
 
 ```ruby
