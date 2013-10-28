@@ -1,4 +1,4 @@
- # Atlassian Crowd Puppet Module
+# Atlassian Crowd Puppet Module
 
 [![Build Status](https://travis-ci.org/actionjack/puppet-crowd.png?branch=master)](https://travis-ci.org/actionjack/puppet-crowd)
 
@@ -8,10 +8,10 @@
 
 * * *
 
- ## Configuration
+## Configuration
 
 
- ## Dependencies
+## Dependencies
 
 Current dependencies are:
 
@@ -19,13 +19,13 @@ Current dependencies are:
  * 'mkrakowitzer/deploy', '>= 0.0.1'
  * 'maestrodev/wget', '>= 1.2.2'
 
- ## Usage
+## Usage
 
 ```ruby
 class {'crowd': }
 ```
 
- ## Documentation
+## Documentation
 
  This module is written in puppetdoc compliant format so details on configuration and usage can be found by executing:
 
@@ -33,11 +33,11 @@ class {'crowd': }
 $ puppet doc manifest/init.pp
 ```
 
- ## Pull Requests
+## Pull Requests
 
- * Please submit a pull request or issue on GitHub
+ * Please submit a pull request or issue on [GitHub](https://github.com/actionjack/puppet-crowd)
 
- ##Limitations
+##Limitations
 
  This module has been built on and tested against Puppet 2.7 and higher.
 
