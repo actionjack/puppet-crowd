@@ -15,9 +15,9 @@
 
 Current dependencies are:
 
- * 'puppetlabs/stdlib', '>= 2.1.0'
- * 'mkrakowitzer/deploy', '>= 0.0.1'
- * 'maestrodev/wget', '>= 1.2.2'
+ * puppetlabs/stdlib
+ * mkrakowitzer/deploy
+ * maestrodev/wget
 
 ## Usage
 
