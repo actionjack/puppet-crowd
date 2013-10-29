@@ -48,4 +48,14 @@ class crowd::install {
     ensure => 'directory',
   }
 
+  if $crowd::db == 'mysql' {
+    wget::fetch { 'mysql java connector':
+      source      => "${crowd::mavenrepopath}/${crowd::jdbcversion}/mysql-connector-java-${crowd::jdbcversion}.jar",
+      destination => "${crowd::webappdir}/apache-tomcat/lib/mysql-connector-java-${crowd::jdbcversion}.jar",
+      timeout     => 0,
+      verbose     => true,
+      require     => Exec["chown_${crowd::webappdir}"]
+    }
+  }
+
 }
